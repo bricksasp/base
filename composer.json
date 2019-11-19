@@ -1,0 +1,26 @@
+{
+    "name": "bricksasp/base",
+    "description": "bricksasp基础模块",
+    "keywords": ["yii2", "bricksasp", "basp"],
+    "type": "yii2-extension",
+    "license": "BSD-3-Clause",
+    "support": {
+        "issues": "https://github.com/bricksasp/base/issues",
+        "source": "https://github.com/bricksasp/base"
+    },
+    "authors": [
+        {
+            "name": "bricksasp",
+            "email": "649909457@qq.com"
+        }
+    ],
+    "require": {
+        "bricksasp/helpers": "~1.0",
+        "bricksasp/rbac": "~1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "bricksasp\\base\\": ""
+        }
+    }
+}
