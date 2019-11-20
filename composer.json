@@ -3,7 +3,6 @@
     "description": "bricksasp基础模块",
     "keywords": ["yii2", "bricksasp", "basp"],
     "type": "yii2-extension",
-    "license": "BSD-3-Clause",
     "support": {
         "issues": "https://github.com/bricksasp/base/issues",
         "source": "https://github.com/bricksasp/base"
