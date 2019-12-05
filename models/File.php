@@ -6,18 +6,6 @@ use Yii;
 /**
  * This is the model class for table "{{%file}}".
  *
- * @property string $id
- * @property string $name
- * @property string $file_url
- * @property int $photo_width
- * @property int $photo_hight
- * @property int $user_id
- * @property int $file_size
- * @property string $mime
- * @property string $ext 扩展名
- * @property int $status 1 有用 0 删除的
- * @property int $created_at
- * @property int $updated_at
  */
 class File extends \bricksasp\base\BaseActiveRecord
 {

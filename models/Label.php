@@ -6,12 +6,6 @@ use Yii;
 /**
  * This is the model class for table "{{%label}}".
  *
- * @property int $id
- * @property string $name 标签名称
- * @property string $style 标签样式
- * @property int $user_id
- * @property int $created_at
- * @property int $updated_at
  */
 class Label extends \bricksasp\base\BaseActiveRecord
 {

@@ -6,14 +6,6 @@ use Yii;
 /**
  * This is the model class for table "{{%brand}}".
  *
- * @property int $id 品牌ID
- * @property string $name 品牌名称
- * @property string $logo 品牌LOGO 图片ID
- * @property int $sort 品牌排序 越小越靠前
- * @property int $status
- * @property int $user_id
- * @property int $created_at 更新时间
- * @property int $updated_at 删除标志 有数据代表删除
  */
 class Brand extends \bricksasp\base\BaseActiveRecord
 {
