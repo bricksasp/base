@@ -39,7 +39,7 @@ class BaseActiveRecord extends \yii\db\ActiveRecord
 
         if (!$this->isNewRecord && $this->hasAttribute('user_id')) {
             $uid = Yii::$app->getUser()->getId();
-            if ($this->user_id && $this->user_id != $uid) {
+            if ($uid && $this->user_id && $this->user_id != $uid) {
                 Tools::exceptionBreak(Yii::t('base',40003));
             }
         }

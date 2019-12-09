@@ -34,7 +34,7 @@ class FileController extends BaseController
 
     /**
      * @OA\Post(
-     *     path="/file/fileupload",
+     *     path="/base/file/fileupload",
      *     summary="文件上传",
      *     description="",
      *     tags={"base模块"},

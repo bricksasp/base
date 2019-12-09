@@ -21,7 +21,7 @@ class RegionController extends BaseController
     }
     /**
      * Lists all Region models.
-     * @OA\Get(path="/region/index",
+     * @OA\Get(path="/base/region/index",
      *   summary="地区列表",
      *   tags={"base模块"},
      *   @OA\Response(
@@ -146,7 +146,7 @@ class RegionController extends BaseController
 
     /**
      * 区域级联选择
-     * @OA\Get(path="/region/area",
+     * @OA\Get(path="/base/region/area",
      *   summary="区域级联选择(省市区乡)",
      *   tags={"base模块"},
      *   @OA\Parameter(
