@@ -167,4 +167,16 @@ class BaseController extends Controller {
 
 		return $params;
 	}
+
+	/**
+	 * 数据所属查询条件
+	 * @return array
+	 */
+	protected function ownerCondition()
+	{
+		return [
+			'user_id' => $this->uid,
+			'owner_id' => $this->ownerId,
+		];
+	}
 }
