@@ -124,7 +124,9 @@ class BaseController extends Controller {
 						$relrow = $item->$relation;
 						if (is_array($rules)) {
 							foreach ($rules as $filed => $rule) {
-								$relrow = Tools::format_array($relrow ? $relrow->toArray():[], $rule, $fg);
+								if ($relrow && !is_array($relrow)) $relrow = $relrow->toArray();
+
+								$relrow = Tools::format_array($relrow ? $relrow : [], $rule, $fg);
 							}
 						}
 						$row[$relation] = $relrow ?? (object)[];
