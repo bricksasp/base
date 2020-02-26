@@ -1,6 +1,8 @@
 <?php
 namespace bricksasp\base\models;
 
+use bricksasp\helpers\Tools;
+
 /**
  * This is the model class for table "{{%region}}".
  */
@@ -60,7 +62,9 @@ class Region extends \bricksasp\base\BaseActiveRecord {
 	 * 获取地区树
 	 */
 	public static function tree() {
-		return [];
+
+		$data = self::find()->limit(1000)->asArray()->all();
+		return Tools::build_tree($data, $root_id = 0, $relation = 'parent_id', $key = 'id', $childname = 'children');
 	}
 
 	/**

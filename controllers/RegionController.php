@@ -16,13 +16,14 @@ class RegionController extends BaseController
 
     public function allowNoLoginAction() {
         return [
-            'area'
+            'area',
+            'tree'
         ];
     }
     /**
      * Lists all Region models.
-     * @OA\Get(path="/base/region/index",
-     *   summary="地区列表",
+     * @OA\Get(path="/base/region/tree",
+     *   summary="地区树",
      *   tags={"base模块"},
      *   @OA\Response(
      *     response=200,
@@ -52,23 +53,11 @@ class RegionController extends BaseController
      *   }
      * )
      */
-    public function actionIndex()
+    public function actionTree()
     {
         // return $this->success(Region::setPid());
-
-        $params = Yii::$app->request->queryParams;
-        $dataProvider = new ActiveDataProvider([
-            'query' => Region::find(),
-            'pagination' => [
-                'pageSize' => $params['pageSize'] ?? 10,
-            ],
-            'sort' => [
-                'defaultOrder' => [
-                    'id' => SORT_DESC
-                ]
-            ],
-        ]);
-        return $this->pageFormat($dataProvider);
+        $model = new Region();
+        return $this->success($model->tree());
     }
 
     /**
