@@ -124,8 +124,13 @@ class BaseController extends Controller {
 						$relrow = $item->$relation;
 						if (is_array($rules)) {
 							foreach ($rules as $filed => $rule) {
-								if ($relrow && !is_array($relrow)) $relrow = $relrow->toArray();
-
+								if ($relrow && !is_array($relrow)) $relrow = $relrow->toArray();//一维数组对象格式化
+								if ($fg == 2) { //二维数组对象格式化
+									$relrow = array_map(function ($item)
+									{
+										return $item && !is_array($item) ? $item->toArray() : $item;
+									}, $relrow);
+								}
 								$relrow = Tools::format_array($relrow ? $relrow : [], $rule, $fg);
 							}
 						}
