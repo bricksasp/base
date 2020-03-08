@@ -44,9 +44,12 @@ class Region extends \bricksasp\base\BaseActiveRecord {
      * @param  intger $id 分类id
      * @return array
      */
-    public function cascader(int $id)
+    public function cascader($id)
     {
         $row = [];
+    	if (empty($id)) {
+    		return $row;
+    	}
         $model = self::findOne($id);
         if ($model->parent_id) {
             $row[] = $model->toArray();
