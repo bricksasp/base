@@ -79,15 +79,4 @@ class BaseActiveRecord extends \yii\db\ActiveRecord
         return array_values($items);
     }
 
-    /**
-     * 获取查询参数
-     * @return array
-     */
-    protected function filterParma($params) {
-        if ($params['data_all'] && $this->hasAttribute('owner_id')) {
-            $params['user_id'] = null;
-        }
-
-        return $params;
-    }
 }

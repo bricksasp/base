@@ -29,7 +29,7 @@ class BaseController extends Controller {
 				'tokenHeader' => 'X-Token', //用户数据
 				'saas_on' => true,
 				'rbac_on' => true,
-				'saas_owner_id' => 1,
+				'default_owner_id' => 1,
 				'exemption' => [
 					'logout',
 					'login',
@@ -165,11 +165,11 @@ class BaseController extends Controller {
 		$params['owner_id'] = $this->ownerId;
 		
 		if ($this->request_entrance == Token::TOKEN_TYPE_BACKEND) {
-			$params['data_all'] = true;
+			$params['is_backend'] = true;
 		}elseif ($this->request_entrance == Token::TOKEN_TYPE_FRONTEND) {
-			$params['data_all'] = false;
+			$params['is_backend'] = false;
 		}else{
-			$params['data_all'] = null;
+			$params['is_backend'] = null;
 		}
 
 		return $params;
