@@ -27,7 +27,6 @@ class FileAction extends Action {
 	public $temp_path = null;
 
 	public function init() {
-		Yii::$app->request->enableCsrfValidation = false;
 		if (!$this->base_path) {
 			$this->base_path = Config::instance()->file_base_path ? Config::instance()->file_base_path : Yii::$app->basePath . '/web';
 		}
@@ -61,7 +60,8 @@ class FileAction extends Action {
 			$res = $this->fail();
 			break;
 		}
-		return $this->controller->asJson($res);
+		header('Content-type:application/json; charset=UTF-8');
+		echo json_encode($res);exit();
 	}
 
 	/**

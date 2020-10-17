@@ -74,6 +74,7 @@ class BaseController extends Controller {
 
 	public function init() {
 
+		$this->enableCsrfValidation = false;
 	}
 
 	/**
